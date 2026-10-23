@@ -124,6 +124,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .menu-list details ul a{display:block;padding:9px 36px;font-size:16px;color:var(--body)}
 .menu-list details ul a:hover{color:var(--red)}
 .menu-list details ul a.all{color:var(--ink);font-weight:500}
+.menu-list details ul li:first-child:has(> a.all){margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+.menu-list details ul a.all::after{content:" \2192";color:var(--red-deep)}
+.menu-list details ul a[aria-current]{color:var(--red-deep);font-weight:500}
 .menu-foot{display:flex;align-items:center;gap:20px;padding:18px 36px 22px;background:var(--paper-soft);border-top:1px solid var(--line)}
 .menu-foot .lang{display:flex;gap:14px;font-size:14px;font-weight:500}
 .menu-foot .lang a{color:var(--muted)}
@@ -879,6 +882,44 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
 .g-item b{font-size:15.5px;font-weight:500;line-height:1.35;color:var(--ink)}
 .g-tag{align-self:flex-start;font-size:11px;letter-spacing:.03em;text-transform:none;font-weight:600;color:var(--red-deep);
   background:rgba(255,34,34,.08);padding:4px 8px;border-radius:2px}
+/* V2 : pages d'intro, sous-pages en tuiles photo */
+.ptiles{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:26px}
+@media (min-width:981px){
+  .ptiles.n4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ptiles.n6{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ptiles.n5{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .ptiles.n5 > li{grid-column:span 2}
+  .ptiles.n5 > li:nth-child(-n+2){grid-column:span 3}
+  .ptiles.n4 .ph,.ptiles.n5 > li:nth-child(-n+2) .ph{aspect-ratio:16 / 9}
+}
+.ptiles > li{display:flex}
+.ptile{display:flex;flex-direction:column;width:100%;border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden;
+  transition:border-color .2s,transform .2s}
+.ptile:hover{border-color:var(--red);transform:translateY(-2px)}
+.ptile .ph{position:relative;aspect-ratio:4 / 3;overflow:hidden;background:#f3f3f2}
+.ptile .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ptile:hover .ph img{transform:scale(1.04)}
+.ptile .ph.contain{background:#fff}
+.ptile .ph.contain img{object-fit:contain;padding:22px}
+.ptile .ph.contain:has(img[src*="ph2-map"]){background:#f7f6f4}  /* fond de la carte capturée */
+.ptile .ph.contain img[src*="ph2-map"]{padding:10px}
+.ptile .ph svg.tile{position:absolute;left:16px;top:16px;width:58px;height:58px;margin:0}
+.ptile .tx{display:flex;flex-direction:column;gap:8px;padding:22px 24px 24px;flex:1}
+.ptile h3{font-size:21px;font-weight:500;line-height:1.2;color:var(--ink)}
+.ptile p{font-size:14.5px;line-height:1.5;color:var(--body)}
+.ptile .go{margin-top:auto;padding-top:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--red-deep)}
+@media (prefers-reduced-motion:reduce){.ptile,.ptile .ph img{transition:none}}
+/* V2 : mosaïque de photos des pages fluide et secteur */
+.mosaic{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;margin-top:56px}
+.mosaic + .blk{margin-top:76px}
+.mosaic figure{margin:0;height:clamp(240px,26vw,380px);border-radius:var(--r);overflow:hidden;background:#f3f3f2}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic:has(> figure:only-child){grid-template-columns:1fr}
+.ptiles > li.sep .ptile{border-style:dashed;border-color:var(--ink)}   /* Tailor-made : catégorie à part */
+@media (min-width:561px) and (max-width:980px){
+  .ptiles.n5 > li:first-child{grid-column:1 / -1}
+  .ptiles.n5 > li:first-child .ph{aspect-ratio:16 / 9}
+}
 
 @media (max-width:1180px){
   .ind-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -909,6 +950,7 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
   .fsel{flex:1 1 140px}
   .fsel select{min-width:0;width:100%}
   .hook{padding:20px 20px;margin-top:48px}
+  .mosaic + .blk{margin-top:52px}
   .home-explore{margin-top:56px}
 }
 @media (max-width:560px){
@@ -927,6 +969,17 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
   .g-img{padding:10px}
   .g-item figcaption{padding:10px 12px 12px}
   .g-item b{font-size:13.5px}
+  .ptiles{gap:12px}
+  .ptile{display:grid;grid-template-columns:38% minmax(0,1fr)}   /* tuile horizontale : pages d'intro moins longues */
+  .ptile .ph{aspect-ratio:auto;height:100%;min-height:150px}
+  .ptile .ph.contain img{padding:10px}
+  .ptile .tx{padding:14px 16px 16px;gap:6px}
+  .ptile h3{font-size:17px}
+  .ptile p{font-size:13.5px}
+  .ptile .ph svg.tile{width:40px;height:40px;left:8px;top:8px}
+  .mosaic{grid-template-columns:1fr;gap:10px;margin-top:40px}
+  .mosaic figure{height:220px}
+  .mosaic + .blk{margin-top:52px}
 }
 </style>
 </head>
@@ -971,23 +1024,23 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
       <ul class="menu-list">
         <li><details>
           <summary>Solutions<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
+          <ul><li><a class="all" href="solutions.html">All solutions</a></li><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
         </details></li>
         <li><details>
           <summary>Fluids &amp; applications<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a href="fluid-chlorine.html">Chlorine related</a></li><li><a href="fluid-fluorine.html">Fluorine related</a></li><li><a href="fluid-cn.html">CN related</a></li><li><a href="fluid-other.html">Other critical applications</a></li></ul>
+          <ul><li><a class="all" href="fluids.html">All fluids &amp; applications</a></li><li><a href="fluid-chlorine.html">Chlorine related</a></li><li><a href="fluid-fluorine.html">Fluorine related</a></li><li><a href="fluid-cn.html">CN related</a></li><li><a href="fluid-other.html">Other critical applications</a></li></ul>
         </details></li>
         <li><details>
           <summary>Industries<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a href="industry-chemicals.html">Chemicals</a></li><li><a href="industry-agrochemicals.html">Agrochemicals</a></li><li><a href="industry-petrochemicals.html">Petrochemicals</a></li><li><a href="industry-nuclear.html">Nuclear</a></li></ul>
+          <ul><li><a class="all" href="industries.html">All industries</a></li><li><a href="industry-chemicals.html">Chemicals</a></li><li><a href="industry-agrochemicals.html">Agrochemicals</a></li><li><a href="industry-petrochemicals.html">Petrochemicals</a></li><li><a href="industry-nuclear.html">Nuclear</a></li></ul>
         </details></li>
         <li><details>
           <summary>References<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a href="case-studies.html">Case studies</a></li><li><a href="literature.html">Literature</a></li><li><a href="quality-certification.html">Certifications &amp; approvals</a></li><li><a href="faq.html">FAQ</a></li></ul>
+          <ul><li><a class="all" href="references.html">All references</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="literature.html">Literature</a></li><li><a href="quality-certification.html">Certifications &amp; approvals</a></li><li><a href="faq.html">FAQ</a></li></ul>
         </details></li>
         <li><details>
           <summary>descote<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a href="company.html">Company</a></li><li><a href="quality-certification.html">Quality &amp; Certification</a></li><li><a href="globally.html">Globally</a></li><li><a href="after-sales.html">After sales</a></li><li><a href="join-us.html">Careers</a></li></ul>
+          <ul><li><a class="all" href="descote.html">All about descote</a></li><li><a href="company.html">Company</a></li><li><a href="quality-certification.html">Quality &amp; Certification</a></li><li><a href="globally.html">Globally</a></li><li><a href="after-sales.html">After sales</a></li><li><a href="join-us.html">Careers</a></li></ul>
         </details></li>
         <li><a href="inquiry.html">Inquiry</a></li>
       </ul>
@@ -1003,13 +1056,13 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
   <section class="dark-band page-head">
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
-      <div class="inner has-fig">
+      <div class="inner">
         <div class="head-copy">
           <p class="crumbs"><a href="index.html">Home</a><span>▸</span>Solutions</p>
           <h1>Valve solutions for hazardous applications</h1>
           <p class="intro">Every descote valve starts from your fluid, your process and your standards. Choose a proven base or start from a blank page: either way, it is engineered for you.</p>
         </div>
-        <figure class="head-fig cut"><img src="assets/pr-005-bellows-cutaway.jpg" alt="Cutaway of a descote bellows sealed globe valve" loading="lazy" width="593" height="1100"></figure>
+        
       </div>
     </div>
   </section>
@@ -1017,7 +1070,7 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="inner">
-<div class="blk blk-list"><h2 class="blk-title">Five product families</h2><ul class="lgrid"><li><a class="lcard" href="solution-process-piping.html"><h3>Process / Piping</h3><p>Bellows sealed and gland packed globe valves, 3-way and check valves for process lines.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="solution-instrumentation.html"><h3>Instrumentation</h3><p>Small-bore bellows sealed valves for gauges, transmitters and sampling points.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="solution-storage.html"><h3>Storage</h3><p>Top and bottom tank valves with an internal safety check valve and remote closure.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="solution-transport.html"><h3>Transport</h3><p>Valves for rail tank cars and road tankers.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="solution-fluid-transfer.html"><h3>Fluid transfer / Jet &amp; Ejectors</h3><p>Ejectors driven by steam move radioactive and hazardous fluids, with no pump and no moving parts.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="solution-tailor-made.html"><h3>Tailor-made engineering</h3><p>When no existing design fits: a valve specified from scratch with our engineers.</p><span class="go" aria-hidden="true">→</span></a></li></ul></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Pre-engineered or tailor-made?</h2><p class="lead">Pre-engineered does not mean off the shelf: we start from a field-proven design and help you define the right specification for your application. Tailor-made engineering goes further: our engineers help you build your own specification from scratch, with a proven method. In both cases, the same metallurgy expertise, testing and full traceability apply.</p></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Start from your fluid or your sector</h2><p class="links"><a class="more" href="fluids.html">Fluids &amp; applications<span aria-hidden="true"> →</span></a><a class="more" href="industries.html">Industries<span aria-hidden="true"> →</span></a></p></div><aside class="hook" aria-label="Tailor-made and quality"><span class="mark" aria-hidden="true"></span><p>Every valve starts from your fluid and your process.</p></aside>
+<div class="blk blk-list"><h2 class="blk-title">Five product families, plus tailor-made engineering</h2><ul class="ptiles n6"><li><a class="ptile" href="solution-process-piping.html"><div class="ph"><img src="assets/ph2-process-unit.jpg" alt="Process unit with globe valves and actuators" loading="lazy" width="1400" height="820"></div><div class="tx"><h3>Process / Piping</h3><p>Bellows sealed and gland packed globe valves, 3-way and check valves for process lines.</p><span class="go">Discover<span aria-hidden="true"> →</span></span></div></a></li><li><a class="ptile" href="solution-instrumentation.html"><div class="ph"><img src="assets/ph2-instrumentation.jpg" alt="Actuated small-bore instrumentation valve" loading="lazy" width="875" height="850"></div><div class="tx"><h3>Instrumentation</h3><p>Small-bore bellows sealed valves for gauges, transmitters and sampling points.</p><span class="go">Discover<span aria-hidden="true"> →</span></span></div></a></li><li><a class="ptile" href="solution-storage.html"><div class="ph"><img src="assets/ph2-storage.jpg" alt="Storage tanks and their valve platforms" loading="lazy" width="1400" height="766"></div><div class="tx"><h3>Storage</h3><p>Top and bottom tank valves with an internal safety check valve and remote closure.</p><span class="go">Discover<span aria-hidden="true"> →</span></span></div></a></li><li><a class="ptile" href="solution-transport.html"><div class="ph contain"><img src="assets/ph2-transport.jpg" alt="ISO container, tonner, rail tank car and road tanker" loading="lazy" width="1400" height="752"></div><div class="tx"><h3>Transport</h3><p>Valves for rail tank cars and road tankers.</p><span class="go">Discover<span aria-hidden="true"> →</span></span></div></a></li><li><a class="ptile" href="solution-fluid-transfer.html"><div class="ph"><img src="assets/ph2-ejector.jpg" alt="Flow through a jet ejector" loading="lazy" width="1400" height="332"></div><div class="tx"><h3>Fluid transfer / Jet &amp; Ejectors</h3><p>Ejectors driven by steam move radioactive and hazardous fluids, with no pump and no moving parts.</p><span class="go">Discover<span aria-hidden="true"> →</span></span></div></a></li><li class="sep"><a class="ptile" href="solution-tailor-made.html"><div class="ph"><img src="assets/engineering-development-reliability-study.jpg" alt="descote engineer inspecting a large valve" loading="lazy" width="413" height="568"></div><div class="tx"><h3>Tailor-made engineering</h3><p>When no existing design fits: a valve specified from scratch with our engineers.</p><span class="go">Discover<span aria-hidden="true"> →</span></span></div></a></li></ul></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Pre-engineered or tailor-made?</h2><p class="lead">Pre-engineered does not mean off the shelf: we start from a field-proven design and help you define the right specification for your application. Tailor-made engineering goes further: our engineers help you build your own specification from scratch, with a proven method. In both cases, the same metallurgy expertise, testing and full traceability apply.</p></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Start from your fluid or your sector</h2><p class="links"><a class="more" href="fluids.html">Fluids &amp; applications<span aria-hidden="true"> →</span></a><a class="more" href="industries.html">Industries<span aria-hidden="true"> →</span></a></p></div><aside class="hook" aria-label="Tailor-made and quality"><span class="mark" aria-hidden="true"></span><p>Every valve starts from your fluid and your process.</p></aside>
       </div>
     </div>
   </section>
@@ -1094,6 +1147,10 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
   var mbtn=document.getElementById('menu-btn'), panel=document.getElementById('menu-panel');
   function setMenu(open){
     panel.hidden=!open; mbtn.setAttribute('aria-expanded',open?'true':'false');
+    if(open){ /* page courante signalée, sa rubrique ouverte */
+      var here=location.pathname.split('/').pop()||'index.html';
+      panel.querySelectorAll('.menu-list a[href="'+here+'"]').forEach(function(a){a.setAttribute('aria-current','page');var d=a.closest('details');if(d)d.open=true;});
+    }
     if(window.innerWidth<=980){document.body.style.overflow=open?'hidden':'';}
   }
   if(mbtn&&panel){
