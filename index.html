@@ -387,6 +387,9 @@ h2.sec{font-size:clamp(24px,2.5vw,34px);font-weight:400;line-height:1.12;letter-
 @media (min-width:981px) and (max-width:1400px){.siblings a{padding:18px 11px 16px;font-size:14px}}  
 
 .menu-list details ul li.sep{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+
+.menu-list details ul li.grp{padding:6px 36px 2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;color:var(--muted)}
 .siblings li.sep{display:flex;align-items:center;margin-left:8px;padding-left:8px;border-left:1px solid var(--line)}
 .siblings li.sep a{align-self:stretch}
 
@@ -909,6 +912,14 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
 .ptile .go{margin-top:auto;padding-top:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--red-deep)}
 @media (prefers-reduced-motion:reduce){.ptile,.ptile .ph img{transition:none}}
 
+
+.blk-table .blk-title{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:6px}
+table.range{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+table.range th,table.range td{text-align:left;vertical-align:top;padding:14px 0;border-bottom:1px solid var(--line)}
+table.range th{width:30%;padding-right:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+table.range td{color:var(--body)}
+.blk-note{margin-top:12px;font-size:13.5px;color:var(--muted)}
+@media (max-width:560px){table.range th,table.range td{display:block;width:auto;padding:0}table.range th{padding-top:14px}table.range td{padding:4px 0 14px}}
 .mosaic{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;margin-top:56px}
 .mosaic + .blk{margin-top:76px}
 .mosaic figure{margin:0;height:clamp(240px,26vw,380px);border-radius:var(--r);overflow:hidden;background:#f3f3f2}
@@ -1111,8 +1122,17 @@ body.is-home .purpose .visual .tag-card{border-radius:0}
   body.is-home .xcard + .xcard{border-left-width:0}
 }
 
-body.is-home .industries li{-webkit-text-stroke-width:1.5px}
 body.is-home .industries .scrim{background:rgba(8,8,8,.6)}
+
+body.is-home .industries li,body.is-home .industries li.on{-webkit-text-stroke:0;color:#fff;letter-spacing:.005em;line-height:1.1}
+body.is-home .industries li a{position:relative}
+body.is-home .industries .ol{display:inline-block;filter:url(#ind-outline)}
+body.is-home .industries .fl{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none}
+body.is-home .industries li.on .fl{opacity:1}
+body.is-home .industries .svg-defs{position:absolute;width:0;height:0;overflow:hidden}
+body.is-home .industries .ind-all{margin-top:40px;text-align:center}
+@media (max-width:980px){body.is-home .industries .ind-all{margin-top:28px}}
+@media (prefers-reduced-motion:reduce){body.is-home .industries .fl{transition:none}}
 
 html[data-mode="nuit"] body.is-home .panel .eyebrow{color:#ff7a7a}
 html[data-mode="nuit"] body.is-home .panel .eyebrow::before{border-left-color:#ff7a7a}
@@ -1162,7 +1182,7 @@ html[data-mode="nuit"] body.is-home main{--red-deep:#ffaeae}
       <ul class="menu-list">
         <li><details>
           <summary>Solutions<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a class="all" href="solutions.html">All solutions</a></li><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
+          <ul><li><a class="all" href="solutions.html">All solutions</a></li><li class="grp">Pre-engineered</li><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
         </details></li>
         <li><details>
           <summary>Fluids &amp; applications<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
@@ -1173,12 +1193,12 @@ html[data-mode="nuit"] body.is-home main{--red-deep:#ffaeae}
           <ul><li><a class="all" href="industries.html">All industries</a></li><li><a href="industry-chemicals.html">Chemicals</a></li><li><a href="industry-agrochemicals.html">Agrochemicals</a></li><li><a href="industry-petrochemicals.html">Petrochemicals</a></li><li><a href="industry-nuclear.html">Nuclear</a></li></ul>
         </details></li>
         <li><details>
-          <summary>References<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a class="all" href="references.html">All references</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="literature.html">Literature</a></li><li><a href="quality-certification.html">Certifications &amp; approvals</a></li><li><a href="faq.html">FAQ</a></li></ul>
+          <summary>Resources<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
+          <ul><li><a class="all" href="resources.html">All resources</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="quality-certification.html">Certifications &amp; approvals</a></li><li><a href="literature.html">Literature</a></li><li><a href="faq.html">FAQ</a></li></ul>
         </details></li>
         <li><details>
           <summary>descote<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a class="all" href="descote.html">All about descote</a></li><li><a href="company.html">Company</a></li><li><a href="quality-certification.html">Quality &amp; Certification</a></li><li><a href="globally.html">Globally</a></li><li><a href="after-sales.html">After sales</a></li><li><a href="join-us.html">Join us</a></li></ul>
+          <ul><li><a class="all" href="descote.html">All about descote</a></li><li><a href="company.html">Company</a></li><li><a href="globally.html">Globally</a></li><li><a href="after-sales.html">After sales</a></li><li><a href="join-us.html">Join us</a></li></ul>
         </details></li>
         <li><a href="inquiry.html">Inquiry</a></li>
       </ul>
@@ -1241,11 +1261,13 @@ html[data-mode="nuit"] body.is-home main{--red-deep:#ffaeae}
       <div class="inner reveal">
         <p class="eyebrow">Industries</p>
         <ul id="industry-list">
-          <li data-shot="chemicals"><a href="industry-chemicals.html">chemicals</a></li>
-          <li data-shot="agrochemicals"><a href="industry-agrochemicals.html">agrochemicals</a></li>
-          <li class="on" data-shot="petrochimicals"><a href="industry-petrochemicals.html">petrochemicals</a></li>
-          <li data-shot="nuclear"><a href="industry-nuclear.html">nuclear</a></li>
+          <li data-shot="chemicals"><a href="industry-chemicals.html"><span class="ol">chemicals</span><span class="fl" aria-hidden="true">chemicals</span></a></li>
+          <li data-shot="agrochemicals"><a href="industry-agrochemicals.html"><span class="ol">agrochemicals</span><span class="fl" aria-hidden="true">agrochemicals</span></a></li>
+          <li class="on" data-shot="petrochimicals"><a href="industry-petrochemicals.html"><span class="ol">petrochemicals</span><span class="fl" aria-hidden="true">petrochemicals</span></a></li>
+          <li data-shot="nuclear"><a href="industry-nuclear.html"><span class="ol">nuclear</span><span class="fl" aria-hidden="true">nuclear</span></a></li>
         </ul>
+        <p class="ind-all"><a class="btn ghost" href="industries.html">All industries</a></p>
+        <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false"><filter id="ind-outline" x="-5%" y="-15%" width="110%" height="130%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="1.3" result="grow"/><feComposite in="grow" in2="SourceAlpha" operator="out" result="ring"/><feFlood flood-color="#fff" flood-opacity=".9"/><feComposite in2="ring" operator="in"/></filter></svg>
       </div>
     </div>
   </section>
@@ -1267,7 +1289,7 @@ html[data-mode="nuit"] body.is-home main{--red-deep:#ffaeae}
         <div class="left stack reveal">
           <div>
             <p class="eyebrow">Fit for purpose</p>
-            <h2 class="h2">We offer customisable<br>&amp; taylor-made Solutions</h2>
+            <h2 class="h2">We offer customisable<br>&amp; tailor-made Solutions</h2>
           </div>
           <p class="lead">Technology designed for professionals who understand and value the need for experience, precision, and authentic craftsmanship. Pre-engineered or tailored to meet your specific needs, we assist you to define the best technical solution.</p>
           <blockquote class="quote">“What deserve to be done, deserves to be done well”<cite>Nicolas Poussin</cite></blockquote>
@@ -1279,7 +1301,7 @@ html[data-mode="nuit"] body.is-home main{--red-deep:#ffaeae}
         </figure>
         <div class="home-explore reveal" id="explore-solutions">
           <p class="kicker">Explore our solutions</p>
-          <div class="xgrid"><article class="xcard"><figure class="card-fig cut"><img src="assets/pr-051-halogen-valve.jpg" alt="Globe valve with position detectors and protective blind flanges" loading="lazy" width="1266" height="1000"></figure><div class="xbody"><h3><a href="solutions.html">Our valve ranges</a></h3><p>Process / piping, instrumentation, storage, transport and fluid transfer: field-proven designs, adapted to your fluid.</p><ul class="variants"><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li></ul></div></article><article class="xcard"><figure class="card-fig cut"><img src="assets/pr-005-bellows-cutaway.jpg" alt="Cutaway of a descote bellows sealed globe valve" loading="lazy" width="593" height="1100"></figure><div class="xbody"><h3><a href="solution-tailor-made.html">Tailor-made engineering</a></h3><p>No existing design fits? Our engineers specify a new valve with you, from the fluid up.</p><ul class="variants"><li><a href="solution-tailor-made.html#approach">Engineering approach</a></li><li><a href="solution-tailor-made.html#materials">Materials</a></li><li><a href="solution-tailor-made.html#tightness">Tightness</a></li><li><a href="solution-tailor-made.html#ndt">Testing &amp; traceability</a></li></ul></div></article></div>
+          <div class="xgrid"><article class="xcard"><figure class="card-fig cut"><img src="assets/pr-051-halogen-valve.jpg" alt="Globe valve with position detectors and protective blind flanges" loading="lazy" width="1266" height="1000"></figure><div class="xbody"><h3><a href="solutions.html#pre-engineered">Pre-engineered solutions</a></h3><p>Process / piping, instrumentation, storage, transport and fluid transfer: field-proven designs, adapted to your fluid.</p><ul class="variants"><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li></ul></div></article><article class="xcard"><figure class="card-fig cut"><img src="assets/pr-005-bellows-cutaway.jpg" alt="Cutaway of a descote bellows sealed globe valve" loading="lazy" width="593" height="1100"></figure><div class="xbody"><h3><a href="solution-tailor-made.html">Tailor-made engineering</a></h3><p>No existing design fits? Our engineers specify a new valve with you, from the fluid up.</p><ul class="variants"><li><a href="solution-tailor-made.html#approach">Engineering approach</a></li><li><a href="solution-tailor-made.html#materials">Materials</a></li><li><a href="solution-tailor-made.html#tightness">Tightness</a></li><li><a href="solution-tailor-made.html#ndt">Testing &amp; traceability</a></li></ul></div></article></div>
         </div>
       </div>
     </div>

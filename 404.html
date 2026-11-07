@@ -388,6 +388,9 @@ h2.sec{font-size:clamp(24px,2.5vw,34px);font-weight:400;line-height:1.12;letter-
 @media (min-width:981px) and (max-width:1400px){.siblings a{padding:18px 11px 16px;font-size:14px}}  
 
 .menu-list details ul li.sep{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+
+.menu-list details ul li.grp{padding:6px 36px 2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;color:var(--muted)}
 .siblings li.sep{display:flex;align-items:center;margin-left:8px;padding-left:8px;border-left:1px solid var(--line)}
 .siblings li.sep a{align-self:stretch}
 
@@ -910,6 +913,14 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
 .ptile .go{margin-top:auto;padding-top:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--red-deep)}
 @media (prefers-reduced-motion:reduce){.ptile,.ptile .ph img{transition:none}}
 
+
+.blk-table .blk-title{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink);margin-bottom:6px}
+table.range{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+table.range th,table.range td{text-align:left;vertical-align:top;padding:14px 0;border-bottom:1px solid var(--line)}
+table.range th{width:30%;padding-right:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--muted)}
+table.range td{color:var(--body)}
+.blk-note{margin-top:12px;font-size:13.5px;color:var(--muted)}
+@media (max-width:560px){table.range th,table.range td{display:block;width:auto;padding:0}table.range th{padding-top:14px}table.range td{padding:4px 0 14px}}
 .mosaic{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:14px;margin-top:56px}
 .mosaic + .blk{margin-top:76px}
 .mosaic figure{margin:0;height:clamp(240px,26vw,380px);border-radius:var(--r);overflow:hidden;background:#f3f3f2}
@@ -1024,7 +1035,7 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
       <ul class="menu-list">
         <li><details>
           <summary>Solutions<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a class="all" href="solutions.html">All solutions</a></li><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
+          <ul><li><a class="all" href="solutions.html">All solutions</a></li><li class="grp">Pre-engineered</li><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
         </details></li>
         <li><details>
           <summary>Fluids &amp; applications<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
@@ -1035,12 +1046,12 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
           <ul><li><a class="all" href="industries.html">All industries</a></li><li><a href="industry-chemicals.html">Chemicals</a></li><li><a href="industry-agrochemicals.html">Agrochemicals</a></li><li><a href="industry-petrochemicals.html">Petrochemicals</a></li><li><a href="industry-nuclear.html">Nuclear</a></li></ul>
         </details></li>
         <li><details>
-          <summary>References<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a class="all" href="references.html">All references</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="literature.html">Literature</a></li><li><a href="quality-certification.html">Certifications &amp; approvals</a></li><li><a href="faq.html">FAQ</a></li></ul>
+          <summary>Resources<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
+          <ul><li><a class="all" href="resources.html">All resources</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="quality-certification.html">Certifications &amp; approvals</a></li><li><a href="literature.html">Literature</a></li><li><a href="faq.html">FAQ</a></li></ul>
         </details></li>
         <li><details>
           <summary>descote<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a class="all" href="descote.html">All about descote</a></li><li><a href="company.html">Company</a></li><li><a href="quality-certification.html">Quality &amp; Certification</a></li><li><a href="globally.html">Globally</a></li><li><a href="after-sales.html">After sales</a></li><li><a href="join-us.html">Join us</a></li></ul>
+          <ul><li><a class="all" href="descote.html">All about descote</a></li><li><a href="company.html">Company</a></li><li><a href="globally.html">Globally</a></li><li><a href="after-sales.html">After sales</a></li><li><a href="join-us.html">Join us</a></li></ul>
         </details></li>
         <li><a href="inquiry.html">Inquiry</a></li>
       </ul>
@@ -1070,7 +1081,7 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="inner">
-<div class="blk blk-list"><h2 class="blk-title">Where to go from here</h2><ul class="lgrid compact"><li><a class="lcard" href="solutions.html"><h3>Solutions</h3><p>Pre-engineered and tailor-made valves for process piping, instrumentation, storage and transport, plus jet ejectors for fluid transfer.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="fluids.html"><h3>Fluids &amp; applications</h3><p>Chlorine, fluorine, cyanide and other critical fluids.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="industries.html"><h3>Industries</h3><p>Chemicals, agrochemicals, petrochemicals and nuclear.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="references.html"><h3>References</h3><p>Case studies, literature and answers to frequent questions.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="descote.html"><h3>descote</h3><p>Our company, quality and certifications, worldwide presence and after-sales service.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="index.html"><h3>Home page</h3><p>Back to the start.</p><span class="go" aria-hidden="true">→</span></a></li></ul></div>
+<div class="blk blk-list"><h2 class="blk-title">Where to go from here</h2><ul class="lgrid compact"><li><a class="lcard" href="solutions.html"><h3>Solutions</h3><p>Pre-engineered and tailor-made valves for process piping, instrumentation, storage and transport, plus jet ejectors for fluid transfer.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="fluids.html"><h3>Fluids &amp; applications</h3><p>Chlorine, fluorine, cyanide and other critical fluids.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="industries.html"><h3>Industries</h3><p>Chemicals, agrochemicals, petrochemicals and nuclear.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="resources.html"><h3>References</h3><p>Case studies, literature and answers to frequent questions.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="descote.html"><h3>descote</h3><p>Our company, quality and certifications, worldwide presence and after-sales service.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="index.html"><h3>Home page</h3><p>Back to the start.</p><span class="go" aria-hidden="true">→</span></a></li></ul></div>
       </div>
     </div>
   </section>
