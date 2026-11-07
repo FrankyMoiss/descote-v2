@@ -388,8 +388,11 @@ h2.sec{font-size:clamp(24px,2.5vw,34px);font-weight:400;line-height:1.12;letter-
 
 .menu-list details ul li.sep{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
 
-.menu-list details ul li.grp{padding:6px 36px 2px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  font-weight:500;color:var(--muted)}
+
+.menu-list details ul li.grp{margin:4px 24px 6px;padding:10px 0 6px;border:1px solid var(--line);border-left:3px solid var(--red);background:var(--paper-soft)}
+.menu-list details ul li.grp .grp-t{display:block;padding:0 14px 6px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--red-deep)}
+.menu-list details ul li.grp ul{padding:0}
+.menu-list details ul li.grp a{padding:7px 14px}
 .siblings li.sep{display:flex;align-items:center;margin-left:8px;padding-left:8px;border-left:1px solid var(--line)}
 .siblings li.sep a{align-self:stretch}
 
@@ -879,7 +882,8 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
 
 .g-item{margin:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
 .g-img{aspect-ratio:4 / 5;display:flex;align-items:center;justify-content:center;padding:14px;background:#fff}
-.g-img img{width:100%;height:100%;object-fit:contain}
+.g-img{position:relative}
+.g-img img{position:absolute;inset:0;width:100%;height:100%;padding:inherit;box-sizing:border-box;object-fit:contain}  
 .g-item figcaption{display:flex;flex-direction:column;gap:6px;padding:16px 18px 18px;border-top:1px solid var(--line)}
 .g-item b{font-size:15.5px;font-weight:500;line-height:1.35;color:var(--ink)}
 .g-tag{align-self:flex-start;font-size:11px;letter-spacing:.03em;text-transform:none;font-weight:600;color:var(--red-deep);
@@ -1034,7 +1038,7 @@ table.range td{color:var(--body)}
       <ul class="menu-list">
         <li><details>
           <summary>Solutions<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
-          <ul><li><a class="all" href="solutions.html">All solutions</a></li><li class="grp">Pre-engineered</li><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
+          <ul><li><a class="all" href="solutions.html">All solutions</a></li><li class="grp"><span class="grp-t">Pre-engineered</span><ul><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li></ul></li><li class="sep"><a href="solution-tailor-made.html">Tailor-made engineering</a></li></ul>
         </details></li>
         <li><details>
           <summary>Fluids &amp; applications<svg class="cv" viewBox="0 0 9 9" aria-hidden="true"><path d="M1.6 3.2L4.5 6.1 7.4 3.2"/></svg></summary>
@@ -1085,7 +1089,7 @@ table.range td{color:var(--body)}
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="inner">
-<div class="blk blk-text prose-blk"><h2 class="blk-title">Context and applications</h2><p class="lead">Most chemicals that are toxic by inhalation are stored as liquefied gases. On a storage tank, the valve is the last barrier between the product and the outside. Our 2200 and 2300 tank valves are designed for fluids such as anhydrous HF, chlorine, ammonia and other liquefied toxic gases.</p></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Pre-engineered or tailor-made</h2><p class="lead">A proven Dual Tek assembly adapted to your tank, or a new tank valve designed with you.</p><p class="links"><a class="more" href="solution-tailor-made.html">Tailor-made engineering<span aria-hidden="true"> →</span></a></p></div><div class="blk blk-challenges"><h2 class="blk-title">Technical challenges addressed</h2><ul class="duo"><li><b>Emergency isolation</b><span>A spring-return actuator closes the valve, locally or by remote emergency command.</span></li><li><b>Two barriers</b><span>An internal safety check valve inside the tank, plus an external bellows sealed angle valve.</span></li><li><b>Stem tightness</b><span>Bellows sealing at the stem, backed by secondary packing.</span></li></ul></div><div class="blk blk-families"><h2 class="blk-title">Typical solution families</h2><div class="fam-grid"><article class="fam"><div class="fam-body"><h3>Dual Tek tank valves</h3><p>The Dual Tek system combines a bellows sealed angle isolation valve with an internal safety check valve, at the top or bottom of large tanks. Standard range 1" to 8", Class 150 to 600, remotely operated.</p><ul class="variants"><li>2200 – tank top, bellows protected from the flow</li><li>2300 – tank bottom, liquid outlet</li></ul></div></article></div></div><aside class="hook" aria-label="Tailor-made and quality"><span class="mark" aria-hidden="true"></span><p>Your fluid, tank nozzle and shutdown logic set the design of each tank valve, built to the same quality plan as our process valves.</p></aside>
+<div class="blk blk-text prose-blk"><h2 class="blk-title">Dual Tek: a solution dedicated to large-capacity tanks</h2><p class="lead">The increased safety and reliability requirements of industries handling hazardous fluids have led descote to develop a solution dedicated to large-capacity tanks for storing dangerous liquefied gases such as A-HF, Cl2, NH3, and others.</p><p class="lead">The Dual Tek system combines a bellows-sealed angle isolation valve with an internal safety check valve. These valves, Model 2200 and Model 2300, can be installed at the top or bottom of the tank.</p></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Pre-engineered or tailor-made</h2><p class="lead">A proven Dual Tek assembly adapted to your tank, or a new tank valve designed with you.</p><p class="links"><a class="more" href="solutions.html#pre-engineered">Pre-engineered solutions: manufacturing range<span aria-hidden="true"> →</span></a><a class="more" href="solution-tailor-made.html">Tailor-made engineering<span aria-hidden="true"> →</span></a></p></div><div class="blk blk-challenges"><h2 class="blk-title">Technical challenges addressed</h2><ul class="duo"><li><b>Emergency isolation</b><span>A spring-return actuator closes the valve, locally or by remote emergency command.</span></li><li><b>Two barriers</b><span>An internal safety check valve inside the tank, plus an external bellows sealed angle valve.</span></li><li><b>Stem tightness</b><span>Bellows sealing at the stem, backed by secondary packing.</span></li></ul></div><div class="blk blk-families"><h2 class="blk-title">Typical solution families</h2><div class="fam-grid"><article class="fam"><div class="fam-body"><h3>Dual Tek tank valves</h3><p>The Dual Tek system combines a bellows sealed angle isolation valve with an internal safety check valve, at the top or bottom of large tanks. Standard range 1" to 8", Class 150 to 600, remotely operated.</p><ul class="variants"><li>2200 – tank top, bellows protected from the flow</li><li>2300 – tank bottom, liquid outlet</li></ul></div></article></div></div><aside class="hook" aria-label="Tailor-made and quality"><span class="mark" aria-hidden="true"></span><p>Your fluid, tank nozzle and shutdown logic set the design of each tank valve, built to the same quality plan as our process valves.</p></aside>
       </div>
     </div>
   </section>
