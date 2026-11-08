@@ -1245,6 +1245,17 @@ Chemicals · Agrochemicals · Petrochemicals · Nuclear</p></div></div></div><as
         if(d.open) panel.querySelectorAll('details').forEach(function(o){ if(o!==d) o.open=false; });
       });
     });
+    panel.querySelectorAll('details > summary').forEach(function(sm){
+      sm.addEventListener('click',function(){
+        var hub=sm.parentNode.querySelector('a.all'); if(!hub) return;
+        var here=location.pathname.split('/').pop()||'index.html', to=hub.getAttribute('href');
+        if(to===here) return;
+        try{ sessionStorage.setItem('descote-menu-hub',to); }catch(e){}
+        location.href=to;
+      });
+    });
+    try{ var hub0=sessionStorage.getItem('descote-menu-hub'); sessionStorage.removeItem('descote-menu-hub');
+      if(hub0&&hub0===(location.pathname.split('/').pop()||'index.html')) setMenu(true); }catch(e){}
   }
 
   // --- Apparition douce au scroll ---
