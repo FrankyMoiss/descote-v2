@@ -864,15 +864,15 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
 .ind-tile h3{font-size:17px;font-weight:500;color:var(--ink)}
 .ind-tile p{font-size:13.5px;color:var(--body);line-height:1.5}
 .ind-tile .go{position:absolute;right:18px;top:20px;color:var(--red-deep)}
-.home-explore{grid-column:1 / -1;margin-top:88px}
-.xgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:6px}
-.xcard{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
-.xcard .card-fig{border-bottom:0;border-right:1px solid var(--line)}
-.xcard .card-fig img{height:100%;min-height:240px}
-.xbody{display:flex;flex-direction:column;gap:12px;padding:24px 26px}
-.xbody h3{font-size:21px;font-weight:500;color:var(--ink)}
-.xbody h3 a:hover{color:var(--red-deep)}
-.xbody p{font-size:15px;color:var(--body);line-height:1.55}
+
+.purpose-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:4px}
+.purpose-paths .path{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:2px solid var(--red)}
+.purpose-paths h3{font-size:20px;font-weight:500;line-height:1.25;color:var(--ink)}
+.purpose-paths h3 a::after{content:" →";color:var(--red-deep)}
+.purpose-paths h3 a:hover{color:var(--red-deep)}
+.purpose-paths p{font-size:15px;line-height:1.55;color:var(--body)}
+.purpose-paths .variants{margin-top:4px}
+@media (max-width:640px){.purpose-paths{grid-template-columns:1fr;gap:26px}}
 .new-home .case-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 
 
@@ -975,7 +975,6 @@ table.range td{color:var(--body)}
 
 @media (max-width:1180px){
   .ind-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .xgrid{grid-template-columns:1fr}
 }
 @media (max-width:980px){
   .page-head .inner.has-fig{grid-template-columns:1fr}
@@ -994,16 +993,12 @@ table.range td{color:var(--body)}
   .form-grid{grid-template-columns:1fr}
   .timeline li{grid-template-columns:1fr;gap:4px}
   .ind-tiles{grid-template-columns:1fr 1fr}
-  .xcard{grid-template-columns:1fr}
-  .xcard .card-fig{border-right:0;border-bottom:1px solid var(--line)}
-  .xcard .card-fig img{min-height:0;height:220px}
   .new-home .case-grid{grid-template-columns:1fr}
   .filter-count{margin-left:0;width:100%}
   .fsel{flex:1 1 140px}
   .fsel select{min-width:0;width:100%}
   .hook{padding:20px 20px;margin-top:48px}
   .mosaic + .blk{margin-top:52px}
-  .home-explore{margin-top:56px}
 }
 @media (max-width:560px){
   .ind-tiles{grid-template-columns:1fr}
@@ -1147,7 +1142,7 @@ html[data-mode="nuit"] body.is-home{background:#454544}
 html[data-mode="nuit"] body.is-home .site-header{background:#454544;border-bottom-color:var(--line-dark)}
 html[data-mode="nuit"] body.is-home main{--ink:#f2f1ef;--body:rgba(255,255,255,.78);--muted:rgba(255,255,255,.6);--line:rgba(255,255,255,.14);--red-deep:#ff7a7a}  
 html[data-mode="nuit"] body.is-home .panel.soft{background:#504f4e}
-html[data-mode="nuit"] body.is-home .ind-tile,html[data-mode="nuit"] body.is-home .xcard,html[data-mode="nuit"] body.is-home .case,
+html[data-mode="nuit"] body.is-home .ind-tile,html[data-mode="nuit"] body.is-home .case,
 html[data-mode="nuit"] body.is-home .global .find{--ink:#231F20;--body:#4B4A48;--muted:#8A8884;--line:rgba(35,31,32,.09);--red-deep:#D4171C}
 html[data-mode="nuit"] body.is-home .reassure .wrap{border-color:var(--line-dark)}
 
@@ -1165,16 +1160,6 @@ body.is-home .purpose .visual.render{background:#fff;border:1px solid var(--line
 body.is-home .purpose .visual.render img{object-fit:contain;object-position:center;height:clamp(400px,36vw,520px);padding:20px 20px 104px;background:#fff}
 @media (max-width:980px){body.is-home .purpose .visual.render img{padding:20px 20px 90px}}
 body.is-home .purpose .visual .tag-card{border-radius:0}
-
-@media (min-width:981px){
-  body.is-home .xcard{grid-template-columns:minmax(0,1fr) minmax(0,2fr);border-radius:0}
-  body.is-home .xcard .card-fig img{min-height:0}
-  body.is-home .home-explore .kicker::before{margin-left:-19px}
-}
-@media (min-width:1181px){
-  body.is-home .xgrid{gap:0}
-  body.is-home .xcard + .xcard{border-left-width:0}
-}
 
 body.is-home .industries .scrim{background:rgba(8,8,8,.6)}
 
@@ -1340,16 +1325,12 @@ html[data-mode="nuit"] body.is-home main{--red-deep:#ffaeae}
           </div>
           <p class="lead">Technology designed for professionals who understand and value the need for experience, precision, and authentic craftsmanship. Pre-engineered or tailored to meet your specific needs, we assist you to define the best technical solution.</p>
           <blockquote class="quote">“What deserves to be done, deserves to be done well.”<cite>Nicolas Poussin</cite></blockquote>
-          <p><a class="btn" href="solutions.html" aria-label="Discover our solutions">Discover</a></p>
+          <div class="purpose-paths" id="explore-solutions"><div class="path"><h3><a href="solutions.html#pre-engineered">Pre-engineered solutions</a></h3><p>Process / piping, instrumentation, storage, transport and fluid transfer: field-proven designs, adapted to your fluid.</p><ul class="variants"><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li></ul></div><div class="path"><h3><a href="solution-tailor-made.html">Tailor-made engineering</a></h3><p>No existing design fits? Our engineers specify a new valve with you, from the fluid up.</p><ul class="variants"><li><a href="solution-tailor-made.html#approach">Engineering approach</a></li><li><a href="solution-tailor-made.html#examples">Built for one process</a></li><li><a href="solution-tailor-made.html#cases">Tailor-made in practice</a></li></ul></div></div>
         </div>
         <figure class="visual render reveal">
           <img src="assets/home-2100bac-nb.jpg" alt="descote 2100BAC actuated bellows sealed control valve, cutaway view" loading="lazy">
           <figcaption class="tag-card"><span>Engineering</span><span>Development</span><span>Reliability study</span></figcaption>
         </figure>
-        <div class="home-explore reveal" id="explore-solutions">
-          <p class="kicker">Explore our solutions</p>
-          <div class="xgrid"><article class="xcard"><figure class="card-fig cut"><img src="assets/pr-051-halogen-valve.jpg" alt="Globe valve with position detectors and protective blind flanges" loading="lazy" width="1266" height="1000"></figure><div class="xbody"><h3><a href="solutions.html#pre-engineered">Pre-engineered solutions</a></h3><p>Process / piping, instrumentation, storage, transport and fluid transfer: field-proven designs, adapted to your fluid.</p><ul class="variants"><li><a href="solution-process-piping.html">Process / Piping</a></li><li><a href="solution-instrumentation.html">Instrumentation</a></li><li><a href="solution-storage.html">Storage</a></li><li><a href="solution-transport.html">Transport</a></li><li><a href="solution-fluid-transfer.html">Fluid transfer / Jet &amp; Ejectors</a></li></ul></div></article><article class="xcard"><figure class="card-fig cut"><img src="assets/pr-005-bellows-cutaway.jpg" alt="Cutaway of a descote bellows sealed globe valve" loading="lazy" width="593" height="1100"></figure><div class="xbody"><h3><a href="solution-tailor-made.html">Tailor-made engineering</a></h3><p>No existing design fits? Our engineers specify a new valve with you, from the fluid up.</p><ul class="variants"><li><a href="solution-tailor-made.html#approach">Engineering approach</a></li><li><a href="solution-tailor-made.html#examples">Built for one process</a></li><li><a href="solution-tailor-made.html#cases">Tailor-made in practice</a></li></ul></div></article></div>
-        </div>
       </div>
     </div>
   </section>

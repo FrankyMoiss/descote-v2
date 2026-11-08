@@ -864,15 +864,15 @@ svg.tile .l{font-size:8.5px;text-anchor:middle;letter-spacing:.04em}
 .ind-tile h3{font-size:17px;font-weight:500;color:var(--ink)}
 .ind-tile p{font-size:13.5px;color:var(--body);line-height:1.5}
 .ind-tile .go{position:absolute;right:18px;top:20px;color:var(--red-deep)}
-.home-explore{grid-column:1 / -1;margin-top:88px}
-.xgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:6px}
-.xcard{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
-.xcard .card-fig{border-bottom:0;border-right:1px solid var(--line)}
-.xcard .card-fig img{height:100%;min-height:240px}
-.xbody{display:flex;flex-direction:column;gap:12px;padding:24px 26px}
-.xbody h3{font-size:21px;font-weight:500;color:var(--ink)}
-.xbody h3 a:hover{color:var(--red-deep)}
-.xbody p{font-size:15px;color:var(--body);line-height:1.55}
+
+.purpose-paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:4px}
+.purpose-paths .path{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:2px solid var(--red)}
+.purpose-paths h3{font-size:20px;font-weight:500;line-height:1.25;color:var(--ink)}
+.purpose-paths h3 a::after{content:" →";color:var(--red-deep)}
+.purpose-paths h3 a:hover{color:var(--red-deep)}
+.purpose-paths p{font-size:15px;line-height:1.55;color:var(--body)}
+.purpose-paths .variants{margin-top:4px}
+@media (max-width:640px){.purpose-paths{grid-template-columns:1fr;gap:26px}}
 .new-home .case-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 
 
@@ -975,7 +975,6 @@ table.range td{color:var(--body)}
 
 @media (max-width:1180px){
   .ind-tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .xgrid{grid-template-columns:1fr}
 }
 @media (max-width:980px){
   .page-head .inner.has-fig{grid-template-columns:1fr}
@@ -994,16 +993,12 @@ table.range td{color:var(--body)}
   .form-grid{grid-template-columns:1fr}
   .timeline li{grid-template-columns:1fr;gap:4px}
   .ind-tiles{grid-template-columns:1fr 1fr}
-  .xcard{grid-template-columns:1fr}
-  .xcard .card-fig{border-right:0;border-bottom:1px solid var(--line)}
-  .xcard .card-fig img{min-height:0;height:220px}
   .new-home .case-grid{grid-template-columns:1fr}
   .filter-count{margin-left:0;width:100%}
   .fsel{flex:1 1 140px}
   .fsel select{min-width:0;width:100%}
   .hook{padding:20px 20px;margin-top:48px}
   .mosaic + .blk{margin-top:52px}
-  .home-explore{margin-top:56px}
 }
 @media (max-width:560px){
   .ind-tiles{grid-template-columns:1fr}
