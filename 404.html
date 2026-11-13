@@ -1037,6 +1037,15 @@ table.range td{color:var(--body)}
 .ptile .ph.contain img:not([src*="ph2-map"]){mix-blend-mode:multiply}
 .reassure a:hover{background:#f3f3f2}
 
+.spec li::before{width:0;height:0;border-radius:0;background:none;border-style:solid;border-width:5px 0 5px 7px;
+  border-color:transparent transparent transparent var(--red);top:calc(11px + .8em - 5px)}
+.timeline li::before{left:0;top:20px;width:0;height:0;border-radius:0;background:none;border-style:solid;border-width:6px 0 6px 9px;
+  border-color:transparent transparent transparent var(--red)}
+.prose ul{list-style:none;padding-left:22px}
+.prose ul li{position:relative}
+.prose ul li::before{content:"";position:absolute;left:-20px;top:calc(.8em - 5px);width:0;height:0;border-style:solid;
+  border-width:5px 0 5px 7px;border-color:transparent transparent transparent var(--red)}
+
 .blk-title{position:relative;font-size:max(28px,min(2.9vw,42px));max-width:24ch}
 .blk-title::before{content:"";position:absolute;left:-23px;top:.4em;width:0;height:0;
   border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent var(--red)}
