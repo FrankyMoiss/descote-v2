@@ -1029,6 +1029,25 @@ table.range td{color:var(--body)}
 
 .cross-card:hover,.after a:hover,a.lcard:hover,.lgrid.logos .lcard:hover{border-color:var(--line);background:#f3f3f2;transform:none}
 
+.ptile,.ind-tile,.cross-card,.after a,a.lcard{transition:background-color .2s,border-color .2s}
+.ptile:hover,.ind-tile:hover{border-color:var(--line);background:#f3f3f2;transform:none}
+.ptile .ph.contain{transition:background-color .2s}
+.ptile:hover .ph.contain:not(:has(img[src*="ph2-map"])){background:#f3f3f2}
+.ptile .ph.contain img:not([src*="ph2-map"]){mix-blend-mode:multiply}
+.reassure a:hover{background:#f3f3f2}
+
+.fam:has(.links a){position:relative;transition:background-color .2s}
+.fam .links a::before{content:"";position:absolute;inset:0}
+.fam .variants,.fam h3 a{position:relative;z-index:1}
+.fam:has(.links a):hover,.fam:has(.links a):hover .card-fig{background:#f3f3f2}
+.fam .card-fig.cut img{mix-blend-mode:multiply}
+.chipsbar button:not([aria-pressed="true"]):hover,.filters button:not([aria-pressed="true"]):hover{background:#f3f3f2}
+.qa summary{padding-left:14px;padding-right:14px;margin:0 -14px;transition:background-color .2s}
+.qa summary:hover{background:#f3f3f2;color:var(--ink)}
+
+.page-head p.crumbs{display:flex;flex-wrap:wrap;align-items:baseline;row-gap:4px}
+@media (max-width:640px){.page-head p.crumbs{font-size:.8125rem;letter-spacing:.1em}}
+
 .callout-red{background:#f1f0ee;color:var(--ink);border-left:4px solid var(--red)}
 .callout-red h2{color:var(--red-deep)}
 .callout-red p{color:var(--body)}
