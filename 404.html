@@ -1037,6 +1037,17 @@ table.range td{color:var(--body)}
 .ptile .ph.contain img:not([src*="ph2-map"]){mix-blend-mode:multiply}
 .reassure a:hover{background:#f3f3f2}
 
+.blk-title{position:relative;font-size:max(28px,min(2.9vw,42px));max-width:24ch}
+.blk-title::before{content:"";position:absolute;left:-23px;top:.4em;width:0;height:0;
+  border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent var(--red)}
+.blk-title.bicolor .t1{display:block;color:var(--red)}
+.blk-table .blk-title::before,.blk-title.no-mark::before{display:none}
+@media (max-width:980px){.blk-title::before{left:-16px;border-width:5px 0 5px 7px}}
+.blk-text .lead-1{font-size:max(20px,min(1.75vw,23px));line-height:1.5;color:var(--ink);max-width:62ch}
+.blk-text .lead.detail,.blk-text .spec li{font-size:max(17px,min(1.3vw,18.5px));line-height:1.6;color:#5F5D5A}
+.blk-text .lead-1 + .lead.detail{margin-top:18px}
+.blk-text .lead.detail strong,.blk-text .spec li b,.blk-text .spec li strong{color:var(--ink)}
+
 .tags a,.access,.fsel span,.after span,.field label{font-size:calc(14.5px)}
 .g-tag,.field label small,.net .note,.btn.small{font-size:calc(15px)}
 
@@ -1168,7 +1179,7 @@ table.range tr:nth-child(even) td.pic svg{--pic-bg:#f1f0ee}
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="inner">
-<div class="blk blk-list"><h2 class="blk-title">Where to go from here</h2><ul class="lgrid compact"><li><a class="lcard" href="solutions.html"><h3>Solutions</h3><p>Pre-engineered and tailor-made valves for process piping, instrumentation, storage and transport, plus jet ejectors for fluid transfer.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="fluids.html"><h3>Fluids &amp; applications</h3><p>Chlorine, fluorine, cyanide and other critical fluids.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="industries.html"><h3>Industries</h3><p>Chemicals, agrochemicals, petrochemicals and nuclear.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="resources.html"><h3>Resources</h3><p>Case studies, literature and answers to frequent questions.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="descote.html"><h3>descote</h3><p>Our company, quality and certifications, worldwide presence and after-sales service.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="index.html"><h3>Home page</h3><p>Back to the start.</p><span class="go" aria-hidden="true">→</span></a></li></ul></div>
+<div class="blk blk-list"><h2 class="blk-title bicolor"><span class="t1">Where to go</span> <span class="t2">from here</span></h2><ul class="lgrid compact"><li><a class="lcard" href="solutions.html"><h3>Solutions</h3><p>Pre-engineered and tailor-made valves for process piping, instrumentation, storage and transport, plus jet ejectors for fluid transfer.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="fluids.html"><h3>Fluids &amp; applications</h3><p>Chlorine, fluorine, cyanide and other critical fluids.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="industries.html"><h3>Industries</h3><p>Chemicals, agrochemicals, petrochemicals and nuclear.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="resources.html"><h3>Resources</h3><p>Case studies, literature and answers to frequent questions.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="descote.html"><h3>descote</h3><p>Our company, quality and certifications, worldwide presence and after-sales service.</p><span class="go" aria-hidden="true">→</span></a></li><li><a class="lcard" href="index.html"><h3>Home page</h3><p>Back to the start.</p><span class="go" aria-hidden="true">→</span></a></li></ul></div>
       </div>
     </div>
   </section>

@@ -1036,6 +1036,17 @@ table.range td{color:var(--body)}
 .ptile .ph.contain img:not([src*="ph2-map"]){mix-blend-mode:multiply}
 .reassure a:hover{background:#f3f3f2}
 
+.blk-title{position:relative;font-size:max(28px,min(2.9vw,42px));max-width:24ch}
+.blk-title::before{content:"";position:absolute;left:-23px;top:.4em;width:0;height:0;
+  border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent var(--red)}
+.blk-title.bicolor .t1{display:block;color:var(--red)}
+.blk-table .blk-title::before,.blk-title.no-mark::before{display:none}
+@media (max-width:980px){.blk-title::before{left:-16px;border-width:5px 0 5px 7px}}
+.blk-text .lead-1{font-size:max(20px,min(1.75vw,23px));line-height:1.5;color:var(--ink);max-width:62ch}
+.blk-text .lead.detail,.blk-text .spec li{font-size:max(17px,min(1.3vw,18.5px));line-height:1.6;color:#5F5D5A}
+.blk-text .lead-1 + .lead.detail{margin-top:18px}
+.blk-text .lead.detail strong,.blk-text .spec li b,.blk-text .spec li strong{color:var(--ink)}
+
 .tags a,.access,.fsel span,.after span,.field label{font-size:calc(14.5px)}
 .g-tag,.field label small,.net .note,.btn.small{font-size:calc(15px)}
 
@@ -1172,7 +1183,7 @@ table.range tr:nth-child(even) td.pic svg{--pic-bg:#f1f0ee}
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="inner">
-<div class="blk blk-text media-row"><div class="media"><figure class="fig photo"><img src="assets/film-metrology.jpg" alt="Brass valve body checked on a coordinate measuring machine" loading="lazy" width="1800" height="910"></figure></div><div class="copy"><h2 class="blk-title">Instrumentation</h2><p class="lead">descote has also successfully developed a full range of Model 2020 bellows-sealed globe valves for applications where zero ppm leakage to the atmosphere is a primary requirement.</p><p class="lead">These valves are used in highly specific instrumentation applications in the chemical industry, handling halogens and their derivatives such as chlorine, A-HF, phosgene and other hazardous fluids.</p><p class="lead">Their main application is as isolation valves on sample bottles, in laboratories, pilot units or analysis lines.</p></div></div><div class="blk blk-families"><h2 class="blk-title">Typical solution families</h2><div class="fam-grid"><article class="fam"><figure class="card-fig photo"><img src="assets/pr-012-2020-manual.jpg" alt="Small-bore instrumentation valves on an installation" loading="lazy" width="753" height="1000"></figure><div class="fam-body"><h3>Model 2020</h3><p>Manual bellows sealed instrumentation globe valve with a forged body. Standard range 1/8" to 1/2", Class 150 to 1500, −80 °C to +400 °C.</p><ul class="variants"><li>Handwheel operation</li><li>Straight or angle body</li></ul></div></article><article class="fam"><figure class="card-fig photo"><img src="assets/pr-013-2020-actuated.jpg" alt="Actuated small-bore instrumentation valve" loading="lazy" width="768" height="1000"></figure><div class="fam-body"><h3>Model 2020A</h3><p>The Model 2020 fitted with a pneumatic actuator for remote on-off duty. A control version is also available.</p><ul class="variants"><li>Pneumatic actuator</li><li>Solenoid valve and limit switches on request</li></ul></div></article></div></div><aside class="hook" aria-label="Tailor-made and quality"><span class="mark" aria-hidden="true"></span><p>Even at half an inch, a descote valve is specified for your fluid, and its seat is gas-tested for zero leakage before delivery.</p></aside>
+<div class="blk blk-text media-row"><div class="media"><figure class="fig photo"><img src="assets/film-metrology.jpg" alt="Brass valve body checked on a coordinate measuring machine" loading="lazy" width="1800" height="910"></figure></div><div class="copy"><h2 class="blk-title">Instrumentation</h2><p class="lead lead-1">descote has also successfully developed a full range of Model 2020 bellows-sealed globe valves for applications where zero ppm leakage to the atmosphere is a primary requirement.</p><p class="lead detail">These valves are used in highly specific instrumentation applications in the chemical industry, handling halogens and their derivatives such as chlorine, A-HF, phosgene and other hazardous fluids.</p><p class="lead detail">Their main application is as isolation valves on sample bottles, in laboratories, pilot units or analysis lines.</p></div></div><div class="blk blk-families"><h2 class="blk-title">Typical solution families</h2><div class="fam-grid"><article class="fam"><figure class="card-fig photo"><img src="assets/pr-012-2020-manual.jpg" alt="Small-bore instrumentation valves on an installation" loading="lazy" width="753" height="1000"></figure><div class="fam-body"><h3>Model 2020</h3><p>Manual bellows sealed instrumentation globe valve with a forged body. Standard range 1/8" to 1/2", Class 150 to 1500, −80 °C to +400 °C.</p><ul class="variants"><li>Handwheel operation</li><li>Straight or angle body</li></ul></div></article><article class="fam"><figure class="card-fig photo"><img src="assets/pr-013-2020-actuated.jpg" alt="Actuated small-bore instrumentation valve" loading="lazy" width="768" height="1000"></figure><div class="fam-body"><h3>Model 2020A</h3><p>The Model 2020 fitted with a pneumatic actuator for remote on-off duty. A control version is also available.</p><ul class="variants"><li>Pneumatic actuator</li><li>Solenoid valve and limit switches on request</li></ul></div></article></div></div><aside class="hook" aria-label="Tailor-made and quality"><span class="mark" aria-hidden="true"></span><p>Even at half an inch, a descote valve is specified for your fluid, and its seat is gas-tested for zero leakage before delivery.</p></aside>
       </div>
     </div>
   </section>
@@ -1188,7 +1199,7 @@ table.range tr:nth-child(even) td.pic svg{--pic-bg:#f1f0ee}
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="inner">
-<div class="blk blk-text prose-blk"><h2 class="blk-title">Research centers</h2><p class="blk-sub">Nuclear industry</p><p class="lead">descote has also successfully developed a full range of bellows-sealed globe valves for highly specific applications involving heavy water, lead-lithium, and other specialized fluids in research centers.</p><p class="lead">This equipment meets very high tightness standards.</p></div>
+<div class="blk blk-text prose-blk"><h2 class="blk-title">Research centers</h2><p class="blk-sub">Nuclear industry</p><p class="lead lead-1">descote has also successfully developed a full range of bellows-sealed globe valves for highly specific applications involving heavy water, lead-lithium, and other specialized fluids in research centers.</p><p class="lead detail">This equipment meets very high tightness standards.</p></div>
       </div>
     </div>
   </section>

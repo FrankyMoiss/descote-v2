@@ -1036,6 +1036,17 @@ table.range td{color:var(--body)}
 .ptile .ph.contain img:not([src*="ph2-map"]){mix-blend-mode:multiply}
 .reassure a:hover{background:#f3f3f2}
 
+.blk-title{position:relative;font-size:max(28px,min(2.9vw,42px));max-width:24ch}
+.blk-title::before{content:"";position:absolute;left:-23px;top:.4em;width:0;height:0;
+  border-style:solid;border-width:6px 0 6px 9px;border-color:transparent transparent transparent var(--red)}
+.blk-title.bicolor .t1{display:block;color:var(--red)}
+.blk-table .blk-title::before,.blk-title.no-mark::before{display:none}
+@media (max-width:980px){.blk-title::before{left:-16px;border-width:5px 0 5px 7px}}
+.blk-text .lead-1{font-size:max(20px,min(1.75vw,23px));line-height:1.5;color:var(--ink);max-width:62ch}
+.blk-text .lead.detail,.blk-text .spec li{font-size:max(17px,min(1.3vw,18.5px));line-height:1.6;color:#5F5D5A}
+.blk-text .lead-1 + .lead.detail{margin-top:18px}
+.blk-text .lead.detail strong,.blk-text .spec li b,.blk-text .spec li strong{color:var(--ink)}
+
 .tags a,.access,.fsel span,.after span,.field label{font-size:calc(14.5px)}
 .g-tag,.field label small,.net .note,.btn.small{font-size:calc(15px)}
 
@@ -1172,7 +1183,7 @@ table.range tr:nth-child(even) td.pic svg{--pic-bg:#f1f0ee}
     <div class="wrap">
       <div class="grid-lines" aria-hidden="true"></div>
       <div class="inner">
-<div class="blk blk-text prose-blk"><h2 class="blk-title">What is a cookie?</h2><p class="lead">A cookie is a small text file stored on your device when you visit a website. It lets the site recognise your device and remember information about your visit.</p></div><div class="blk blk-list"><h2 class="blk-title">Cookies we use</h2><p class="lead">We measure audience with Matomo, hosted on our own website.</p><ul class="lgrid"><li><div class="lcard"><h3>_pk_id.*</h3><p>Audience measurement: stores a unique visit identifier. Lifetime: 13 months.</p></div></li><li><div class="lcard"><h3>_pk_ref.*</h3><p>Audience measurement: records how you arrived on the site. Lifetime: 6 months.</p></div></li><li><div class="lcard"><h3>_pk_ses.*</h3><p>Audience measurement: stores your visit data temporarily. Lifetime: 30 minutes.</p></div></li><li><div class="lcard"><h3>hasConsent</h3><p>Remembers your cookie choice so the banner is not shown again. Lifetime: 7 months.</p></div></li></ul></div><div class="blk blk-list"><h2 class="blk-title">External services</h2><p class="lead">Some features rely on external providers, which may set their own cookies or collect technical data such as your IP address.</p><ul class="lgrid"><li><div class="lcard"><h3>Form protection</h3><p>Anti-spam check on our forms (currently Google reCAPTCHA).</p></div></li></ul></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Your choices</h2><p class="lead">You can accept or refuse non-essential cookies in the cookie banner. To change your choice, delete this site's cookies in your browser: the banner will appear again. You can also block cookies in your browser settings; some features may then no longer work.</p></div><div class="blk blk-text prose-blk"><h2 class="blk-title">How long we keep data</h2><p class="lead">Cookies and browsing data are kept for 13 months at most. To find out how we handle personal data, please read our Privacy Policy.</p></div>
+<div class="blk blk-text prose-blk"><h2 class="blk-title">What is a cookie?</h2><p class="lead lead-1">A cookie is a small text file stored on your device when you visit a website. It lets the site recognise your device and remember information about your visit.</p></div><div class="blk blk-list"><h2 class="blk-title">Cookies we use</h2><p class="lead">We measure audience with Matomo, hosted on our own website.</p><ul class="lgrid"><li><div class="lcard"><h3>_pk_id.*</h3><p>Audience measurement: stores a unique visit identifier. Lifetime: 13 months.</p></div></li><li><div class="lcard"><h3>_pk_ref.*</h3><p>Audience measurement: records how you arrived on the site. Lifetime: 6 months.</p></div></li><li><div class="lcard"><h3>_pk_ses.*</h3><p>Audience measurement: stores your visit data temporarily. Lifetime: 30 minutes.</p></div></li><li><div class="lcard"><h3>hasConsent</h3><p>Remembers your cookie choice so the banner is not shown again. Lifetime: 7 months.</p></div></li></ul></div><div class="blk blk-list"><h2 class="blk-title">External services</h2><p class="lead">Some features rely on external providers, which may set their own cookies or collect technical data such as your IP address.</p><ul class="lgrid"><li><div class="lcard"><h3>Form protection</h3><p>Anti-spam check on our forms (currently Google reCAPTCHA).</p></div></li></ul></div><div class="blk blk-text prose-blk"><h2 class="blk-title">Your choices</h2><p class="lead lead-1">You can accept or refuse non-essential cookies in the cookie banner. To change your choice, delete this site's cookies in your browser: the banner will appear again. You can also block cookies in your browser settings; some features may then no longer work.</p></div><div class="blk blk-text prose-blk"><h2 class="blk-title">How long we keep data</h2><p class="lead lead-1">Cookies and browsing data are kept for 13 months at most. To find out how we handle personal data, please read our Privacy Policy.</p></div>
       </div>
     </div>
   </section>
